@@ -32,10 +32,15 @@ The environment should also contain the package 'splitmask', which can be instal
 
     pip install git+https://github.com/guiwitz/splitmask.git@master#egg=splitmask -U
 
+You will also need the napari-guitils module:
+
+    pip install "napari-guitils @ git+https://github.com/guiwitz/napari-guitils.git"
+
 Finally install napari-splitmask from Github using this command:
 
     pip install git+https://github.com/StojiljkovicVetAna/napari-splitmask.git
 
+You can now write napari in your terminal and start using napari-splitmask by opening it under napari/Plugins
 
 ## Authors
 
