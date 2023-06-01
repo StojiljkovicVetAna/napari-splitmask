@@ -1,6 +1,6 @@
 name: napari-splitmask
 display_name: napari-splitmask
-contributions: Ana Stojiljkovic and Guillaume Witz
+contributions:
   commands:
     - id: napari-splitmask.make_qwidget
       python_name: napari_splitmask._widget:SplitmaskforNapari
