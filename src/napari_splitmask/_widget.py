@@ -7,8 +7,6 @@ import numpy as np
 import skimage.io
 from pathlib import Path
 
-import matplotlib
-
 from tifffile.tifffile import imwrite
 
 
@@ -304,6 +302,6 @@ class SplitmaskforNapari(QWidget):
 
         self.viewer.screenshot(self.export_folder.joinpath('export_screenshot.png'))
 
-        self.intensity_plot.axes.figure.savefig(self.export_folder.joinpath('export_plot.png'))
+        self.intensity_plot.figure.savefig(self.export_folder.joinpath('export_plot.png'))
         
         imwrite(self.export_folder.joinpath('export_'+self.drop_sector.currentText()+'.tiff'), sector_mask)   
