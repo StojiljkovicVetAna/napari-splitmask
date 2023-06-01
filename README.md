@@ -1,5 +1,7 @@
 # napari-splitmask
 
+This [napari] plugin was generated with [Cookiecutter] using [@napari]'s [cookiecutter-napari-plugin] template.
+
 [![License BSD-3](https://img.shields.io/pypi/l/napari-splitmask.svg?color=green)](https://github.com/StojiljkovicVetAna/napari-splitmask/raw/main/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/napari-splitmask.svg?color=green)](https://pypi.org/project/napari-splitmask)
 [![Python Version](https://img.shields.io/pypi/pyversions/napari-splitmask.svg?color=green)](https://python.org)
@@ -7,37 +9,39 @@
 [![codecov](https://codecov.io/gh/StojiljkovicVetAna/napari-splitmask/branch/main/graph/badge.svg)](https://codecov.io/gh/StojiljkovicVetAna/napari-splitmask)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-splitmask)](https://napari-hub.org/plugins/napari-splitmask)
 
-Plugin to use the python package 'splitmask' within napari
+Plugin to use the python package 'splitmask' within napari.
+
+The [splitmask] package provides interesting tools to analyze the dynamics of intensity in time-lapse microscopy images split into regions of specific geometries.
+
+Here we have wrapped the splitmask functions into a napari plugin, which enables to interactively setup points of interest, that are used to generate masks of different geometries. These specific masks are then used to compute intensity measurements on different channels of the time-lapse images. The intensity data can be viewed in napari or saved along with the masks.
 
 ----------------------------------
-
-This [napari] plugin was generated with [Cookiecutter] using [@napari]'s [cookiecutter-napari-plugin] template.
-
-<!--
-Don't miss the full getting started guide to set up your new package:
-https://github.com/napari/cookiecutter-napari-plugin#getting-started
-
-and review the napari docs for plugin developers:
-https://napari.org/stable/plugins/index.html
--->
-
 ## Installation
 
-You can install `napari-splitmask` via [pip]:
+Install napari-splitmask in a conda environment where you have pre-installed napari!
 
-    pip install napari-splitmask
+If you don't have an environment, follow this example using [conda] as environment manager. Or follow the instructions on the [napari] repository.
 
+    conda create -y -n napari-env -c conda-forge python=3.9
+    conda activate napari-env
+    python -m pip install "napari[all]"
 
+In this example, you create a new environment called 'napari-env' (you can pick the name you prefer), then you activate it and finally you install napari.
 
-To install latest development version :
+The environment should also contain the package 'splitmask', which can be installed as follow:
+
+    pip install git+https://github.com/guiwitz/splitmask.git@master#egg=splitmask -U
+
+Finally install napari-splitmask from Github using this command:
 
     pip install git+https://github.com/StojiljkovicVetAna/napari-splitmask.git
 
 
-## Contributing
+## Authors
 
-Contributions are very welcome. Tests can be run with [tox], please ensure
-the coverage at least stays the same before you submit a pull request.
+Splitmask has been created by Guillaume Witz, Microscopy Imaging Center and Data Science Lab, University of Bern in collaboration with Jakobus van Unen, Pertz lab, Institute of Cell Biology, University of Bern.
+
+Ana Stojiljkovic & Guillaume Witz, Data Science Lab (DSL), University of Bern have developed the napari-splitmask plugin.
 
 ## License
 
@@ -65,3 +69,6 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 [tox]: https://tox.readthedocs.io/en/latest/
 [pip]: https://pypi.org/project/pip/
 [PyPI]: https://pypi.org/
+
+[splitmask]: https://github.com/guiwitz/splitmask
+[conda]: https://docs.conda.io/en/latest/miniconda.html
