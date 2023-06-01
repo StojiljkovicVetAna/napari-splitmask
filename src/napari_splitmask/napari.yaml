@@ -1,17 +1,10 @@
 name: napari-splitmask
 display_name: napari-splitmask
-contributions: Ana Stojiljkovic & Guillaume Witz
+contributions: Ana Stojiljkovic and Guillaume Witz
   commands:
-    - id: napari-splitmask.make_sample_data
-      python_name: napari_splitmask._sample_data:make_sample_data
-      title: Load sample data from napari-splitmask
     - id: napari-splitmask.make_qwidget
-      python_name: napari_splitmask._widget:SplitmaskQWidget
+      python_name: napari_splitmask._widget:SplitmaskforNapari
       title: napari-splitmask
-  sample_data:
-    - command: napari-splitmask.make_sample_data
-      display_name: napari-splitmask
-      key: unique_id.1
   widgets:
     - command: napari-splitmask.make_qwidget
       display_name: napari-splitmask

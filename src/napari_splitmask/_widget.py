@@ -302,7 +302,8 @@ class SplitmaskforNapari(QWidget):
         df = self.signal_radius.to_dataframe().reset_index()
         df.to_csv(self.export_folder.joinpath('export_plot_data.csv'), index=False)
 
-        self.intensity_plot.axes.savefig(self.export_folder.joinpath('export_plot.png'))
         self.viewer.screenshot(self.export_folder.joinpath('export_screenshot.png'))
 
+        self.intensity_plot.axes.figure.savefig(self.export_folder.joinpath('export_plot.png'))
+        
         imwrite(self.export_folder.joinpath('export_'+self.drop_sector.currentText()+'.tiff'), sector_mask)   
