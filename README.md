@@ -13,14 +13,14 @@ Plugin to use the python package 'splitmask' within napari.
 
 The [splitmask] package provides interesting tools to analyze the dynamics of intensity in time-lapse microscopy images split into regions of specific geometries.
 
-Here we have wrapped the splitmask functions into a napari plugin, which enables to interactively setup points of interest, that are used to generate masks of different geometries. These specific masks are then used to compute intensity measurements on different channels of the time-lapse images. The intensity data can be viewed in napari or saved along with the masks.
+Here we have wrapped the splitmask functions into a napari plugin, which enables to interactively setup points of interest, which are used to generate masks of different geometries. These specific masks are then used to compute intensity measurements on different channels of the time-lapse images. The intensity data can be viewed in napari or saved along with the masks.
 
 ----------------------------------
 ## Installation
 
-Install napari-splitmask in a conda environment where you have pre-installed napari!
+Install napari-splitmask in a python environment where you have pre-installed napari!
 
-If you don't have an environment, follow this example using [conda] as environment manager. Or follow the instructions on the [napari] repository.
+If you don't have an environment, follow this example using [conda] as environment manager. Or follow the instructions on the [napari] website.
 
     conda create -y -n napari-env -c conda-forge python=3.9
     conda activate napari-env
@@ -28,19 +28,11 @@ If you don't have an environment, follow this example using [conda] as environme
 
 In this example, you create a new environment called 'napari-env' (you can pick the name you prefer), then you activate it and finally you install napari.
 
-The environment should also contain the package 'splitmask', which can be installed as follow:
-
-    pip install git+https://github.com/guiwitz/splitmask.git@master#egg=splitmask -U
-
-You will also need the napari-guitils module:
-
-    pip install "napari-guitils @ git+https://github.com/guiwitz/napari-guitils.git"
-
-Finally install napari-splitmask from Github using this command:
+Now you can install napari-splitmask from Github in the same environment using this command:
 
     pip install git+https://github.com/StojiljkovicVetAna/napari-splitmask.git
 
-You can now write napari in your terminal and start using napari-splitmask by opening it under napari/Plugins
+If the installation was successful, you will be able to write napari in your terminal and the napari GUI should appear. From the GUI navigate to Plugins/napari-splitmask to open the plugin.
 
 ## Authors
 
@@ -70,7 +62,7 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 
 [file an issue]: https://github.com/StojiljkovicVetAna/napari-splitmask/issues
 
-[napari]: https://github.com/napari/napari
+[napari]: https://napari.org/stable/tutorials/fundamentals/installation.html
 [tox]: https://tox.readthedocs.io/en/latest/
 [pip]: https://pypi.org/project/pip/
 [PyPI]: https://pypi.org/

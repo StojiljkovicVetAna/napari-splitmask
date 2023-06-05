@@ -302,6 +302,6 @@ class SplitmaskforNapari(QWidget):
 
         self.viewer.screenshot(self.export_folder.joinpath('export_screenshot.png'))
 
-        #self.intensity_plot.axes.savefig(self.export_folder.joinpath('export_plot.png'))
+        self.intensity_plot.canvas.figure.savefig(self.export_folder.joinpath('export_plot.png'))
         
         imwrite(self.export_folder.joinpath('export_'+self.drop_sector.currentText()+'.tiff'), sector_mask)   
