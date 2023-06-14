@@ -1,6 +1,6 @@
 title: napari-splitmask
 author: Ana Stojiljkovic and Guillaume Witz
-logo: ![logo](../images/napari-splitmask_logo.png)
+logo: docs/images/napari-splitmask_logo.png
 
 execute:
   execute_notebooks: 'off'
