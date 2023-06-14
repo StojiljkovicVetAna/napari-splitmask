@@ -1,0 +1,10 @@
+title: napari-splitmask
+author: Ana Stojiljkovic and Guillaume Witz
+logo: images/napari-splitmask_logo.png
+
+execute:
+  execute_notebooks: 'off'
+
+sphinx:
+  config:
+    html_extra_path: ['.','images']

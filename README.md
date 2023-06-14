@@ -13,26 +13,37 @@ Plugin to use the python package 'splitmask' within napari.
 
 The [splitmask] package provides interesting tools to analyze the dynamics of intensity in time-lapse microscopy images split into regions of specific geometries.
 
-Here we have wrapped the splitmask functions into a napari plugin, which enables to interactively setup points of interest, which are used to generate masks of different geometries. These specific masks are then used to compute intensity measurements on different channels of the time-lapse images. The intensity data can be viewed in napari or saved along with the masks.
+Here we have wrapped the splitmask functions into an easy-to-use napari plugin, which enables to interactively setup points of interest, which are used to generate masks of different geometries. In the current version you can select three different geometries:
+
+<center><img src="images/napari-splitmask_shapes.png" width="490" height="150"/></center>
+
+These specific masks are then used to compute intensity measurements on different channels of the time-lapse images. The intensity data can be viewed in napari or saved along with the masks.
 
 ----------------------------------
 ## Installation
 
-Install napari-splitmask in a python environment where you have pre-installed napari!
+Install napari-splitmask in a python environment where you have pre-installed the python viewer [napari]!
 
-If you don't have an environment, follow this example using [conda] as environment manager. Or follow the instructions on the [napari] website.
+If you don't have a python environment yet, follow the example below, which uses [conda] as environment manager. Or explore the different options illustrated on the [napari installation] website.
 
-    conda create -y -n napari-env -c conda-forge python=3.9
-    conda activate napari-env
-    python -m pip install "napari[all]"
+### First create a python environment containing napari
+After installing conda, execute these three commands in your terminal or command prompt.
+```
+conda create -y -n napari-env -c conda-forge python=3.9
+conda activate napari-env
+python -m pip install "napari[all]"
+```
+In this example, with the first command you create a new environment called 'napari-env' (here you can pick the name that you prefer), and you install python 3.9 in this new environment. Then you activate it and finally you install napari.
 
-In this example, you create a new environment called 'napari-env' (you can pick the name you prefer), then you activate it and finally you install napari.
+### Install napari-splitmask
 
-Now you can install napari-splitmask from Github in the same environment using this command:
+In the newly created environment, now you can install napari-splitmask from Github using this command:
 
     pip install git+https://github.com/StojiljkovicVetAna/napari-splitmask.git
 
-If the installation was successful, you will be able to write napari in your terminal and the napari GUI should appear. From the GUI navigate to Plugins/napari-splitmask to open the plugin.
+### Use napari-splitmask
+If the installation was successful, you will be able to use napari-splitmask from your new environment. Make sure that the environment is active and type napari in the terminal, the napari GUI should appear. From the GUI you should navigate to Plugins/napari-splitmask to open the plugin. <br/>
+Detailed instructions for the plugin are provided in the step-by-step guide.333333
 
 ## Authors
 
@@ -49,7 +60,9 @@ Distributed under the terms of the [BSD-3] license,
 
 If you encounter any problems, please [file an issue] along with a detailed description.
 
-[napari]: https://github.com/napari/napari
+[napari]: https://napari.org/stable/
+[napari installation]: https://napari.org/stable/tutorials/fundamentals/installation.html
+
 [Cookiecutter]: https://github.com/audreyr/cookiecutter
 [@napari]: https://github.com/napari
 [MIT]: http://opensource.org/licenses/MIT
