@@ -15,7 +15,7 @@ The [splitmask] package provides interesting tools to analyze the dynamics of in
 
 Here we have wrapped the splitmask functions into an easy-to-use napari plugin, which enables to interactively setup points of interest, which are used to generate masks of different geometries. In the current version you can select three different geometries:
 
-<center><img src="images/napari-splitmask_shapes.png" width="490" height="150"/></center>
+<center><img src="/docs/images/napari-splitmask_shapes.png" width="490" height="190"/></center>
 
 These specific masks are then used to compute intensity measurements on different channels of the time-lapse images. The intensity data can be viewed in napari or saved along with the masks.
 
