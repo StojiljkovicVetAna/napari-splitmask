@@ -330,7 +330,7 @@ class SplitmaskforNapari(QWidget):
 
             self.signal_radius.name = 'intensity'
             df = self.signal_radius.to_dataframe().reset_index()
-            df.to_csv(self.export_folder_loop.joinpath('export_'+self.drop_channel.itemText(c)+self.drop_channel.itemText(m)+'_data.csv'), index=False)
+            df.to_csv(self.export_folder_loop.joinpath('export_'+self.drop_channel.itemText(c)+self.drop_sector.itemText(m)+'_data.csv'), index=False)
 
             # self.intensity_plot.axes.clear()
 
