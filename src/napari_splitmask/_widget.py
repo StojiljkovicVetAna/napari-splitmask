@@ -107,6 +107,8 @@ class SplitmaskforNapari(QWidget):
 
         self.btn_export_plot = QPushButton('7. Save plot data')
 
+        self.btn_export_all = QPushButton('Save all combinations')
+
         self.setLayout(QVBoxLayout())
         self.layout().addWidget(self.btn_ROI_label)
         self.layout().addWidget(self.btn_ROI)
@@ -138,6 +140,7 @@ class SplitmaskforNapari(QWidget):
         self.layout().addWidget(self.drop_sector)
         self.layout().addWidget(self.btn_plot_int)
         self.layout().addWidget(self.btn_export_plot)
+        self.layout().addWidget(self.btn_export_all)
 
         
 
@@ -161,6 +164,7 @@ class SplitmaskforNapari(QWidget):
 
         self.btn_plot_int.clicked.connect(self._on_plot)
         self.btn_export_plot.clicked.connect(self._export_plot)
+        self.btn_export_all.clicked.connect(self._export_all)
         
 
     
@@ -304,4 +308,36 @@ class SplitmaskforNapari(QWidget):
 
         self.intensity_plot.canvas.figure.savefig(self.export_folder.joinpath('export_plot.png'))
         
-        imwrite(self.export_folder.joinpath('export_'+self.drop_sector.currentText()+'.tiff'), sector_mask)   
+        imwrite(self.export_folder.joinpath('export_'+self.drop_sector.currentText()+'.tiff'), sector_mask)
+
+    def _export_all(self):
+        self.export_folder_loop = Path(str(QFileDialog.getExistingDirectory(self, "Select Directory")))
+
+        for c in self.drop_channel[c]:
+            C_loop_data = self.viewer.layers[self.drop_channel.itemText[c]].data
+            for m in self.drop_sector[m]:
+                sector_loop_mask=self.viewer.layers[self.drop_sector.itemText(m)].data[np.newaxis, :]
+        
+            npdata_loop = Nparray(C_loop_data[np.newaxis,:])
+
+            channels_loop = npdata_loop.channel_name
+
+            self.signal_radius = splitmask.measure_intensities(
+                     npdata_loop, channels=channels_loop, 
+                     im_labels = sector_loop_mask)
+            
+            #data_loop = self.signal_radius.sel(channel=0, roi=0)
+
+            self.signal_radius.name = 'intensity'
+            df = self.signal_radius.to_dataframe().reset_index()
+            df.to_csv(self.export_folder_loop.joinpath('export_'+self.drop_channel.itemText(c)+self.drop_channel.itemText(m)+'_data.csv'), index=False)
+
+            # self.intensity_plot.axes.clear()
+
+            #for i in range(data_loop.shape[1]):
+            #self.intensity_plot.axes.plot(data_loop[:,i], color=self.matplotlib_cm(i+1))
+
+        
+
+
+
