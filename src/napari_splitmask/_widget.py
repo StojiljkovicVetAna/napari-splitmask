@@ -318,11 +318,11 @@ class SplitmaskforNapari(QWidget):
             for m in range(self.drop_sector.count()):
                 sector_loop_mask=self.viewer.layers[self.drop_sector.itemText(m)].data[np.newaxis, :]
         
-            npdata_loop = Nparray(C_loop_data[np.newaxis,:])
+                npdata_loop = Nparray(C_loop_data[np.newaxis,:])
 
-            channels_loop = npdata_loop.channel_name
+                channels_loop = npdata_loop.channel_name
 
-            self.signal_radius = splitmask.measure_intensities(
+                self.signal_radius = splitmask.measure_intensities(
                      npdata_loop, channels=channels_loop, 
                      im_labels = sector_loop_mask)
             
@@ -330,7 +330,7 @@ class SplitmaskforNapari(QWidget):
 
             self.signal_radius.name = 'intensity'
             df = self.signal_radius.to_dataframe().reset_index()
-            df.to_csv(self.export_folder_loop.joinpath('export_'+self.drop_channel.itemText(c)+self.drop_sector.itemText(m)+'_data.csv'), index=False)
+            df.to_csv(self.export_folder_loop.joinpath('export_'+self.drop_channel.itemText(c)+'_'+self.drop_sector.itemText(m)+'_data.csv'), index=False)
 
             # self.intensity_plot.axes.clear()
 
