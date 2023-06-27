@@ -337,7 +337,7 @@ class SplitmaskforNapari(QWidget):
                 for i in range(data_loop.shape[1]):
                     self.intensity_plot.axes.plot(data_loop[:,i], color=self.matplotlib_cm(i+1))
 
-                self.intensity_plot.figure.savefig(self.export_folder_loop.joinpath('export'+self.drop_channel.itemText(c)+'_'+self.drop_sector.itemText(m)+'_plot.png'))
+                self.intensity_plot.canvas.figure.savefig(self.export_folder_loop.joinpath('export'+self.drop_channel.itemText(c)+'_'+self.drop_sector.itemText(m)+'_plot.png'))
             
             # self.intensity_plot.axes.clear()
 
