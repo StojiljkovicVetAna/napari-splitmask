@@ -313,9 +313,9 @@ class SplitmaskforNapari(QWidget):
     def _export_all(self):
         self.export_folder_loop = Path(str(QFileDialog.getExistingDirectory(self, "Select Directory")))
 
-        for c in self.drop_channel:
+        for c in range(self.drop_channel.itemText()):
             C_loop_data = self.viewer.layers[self.drop_channel.itemText[c]].data
-            for m in self.drop_sector:
+            for m in range(self.drop_sector.itemText()):
                 sector_loop_mask=self.viewer.layers[self.drop_sector.itemText(m)].data[np.newaxis, :]
         
             npdata_loop = Nparray(C_loop_data[np.newaxis,:])
