@@ -12,6 +12,8 @@ from tifffile.tifffile import imwrite
 
 from splitmask import splitmask
 
+from napari.layers.points._points_key_bindings import activate_points_add_mode
+
 from napari_guitils.gui_structures import TabSet
 
 from napari.layers import Labels, Points, Image
@@ -170,8 +172,11 @@ class SplitmaskforNapari(QWidget):
     
     def _ROI_click(self):
         
-        self.viewer.add_points(size=5, 
+        point_layer = self.viewer.add_points(size=5, 
                                name='point of interest')
+        activate_points_add_mode(point_layer)
+        #layer.mode = Mode.ADD
+        
         
         
     def _update_drop(self):
